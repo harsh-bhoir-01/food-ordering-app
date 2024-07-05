@@ -13,7 +13,6 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
-    // postFetchData();
   }, []);
 
   const fetchData = async () => {
@@ -41,27 +40,6 @@ const Body = () => {
     );
     setFilteredRestaurants(filteredSearch);
   };
-
-  // const postFetchData = async () => {
-  //   try {
-  //     console.log("hi");
-  //     const data = await fetch(
-  //       "https://www.swiggy.com/dapi/restaurants/list/update",
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //
-  //         },
-  //       }
-  //     );
-  //     console.log(data);
-  //     const json = await data.json();
-  //     console.log(json);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const handleFilter = () => {
     const filteredList = listOfRestaurants?.filter(
@@ -106,18 +84,19 @@ const Body = () => {
         </div>
       </div>
       <div className=" flex flex-wrap mx-28 ">
-        {filteredRestaurants.map((restaurant) => (
-          <Link
-            key={restaurant?.info?.id}
-            to={"/restaurants/" + restaurant?.info?.id}
-          >
-            {restaurant?.info?.promoted ? (
-              <RestaurantCardPromoted resData={restaurant} />
-            ) : (
-              <RestaurantCard resData={restaurant} />
-            )}
-          </Link>
-        ))}
+        {filteredRestaurants?.length > 0 &&
+          filteredRestaurants.map((restaurant) => (
+            <Link
+              key={restaurant?.info?.id}
+              to={"/restaurants/" + restaurant?.info?.id}
+            >
+              {restaurant?.info?.promoted ? (
+                <RestaurantCardPromoted resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )}
+            </Link>
+          ))}
       </div>
     </div>
   );

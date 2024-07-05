@@ -24,12 +24,7 @@ const Header = () => {
               <li className=" px-3 cursor-pointer hover:text-black mt-4">
                 <Link to="/">Home</Link>
               </li>
-              <li className=" px-3  cursor-pointer hover:text-black mt-4">
-                <Link to="/about">About</Link>
-              </li>
-              <li className=" px-3  cursor-pointer hover:text-black mt-4">
-                <Link to="/contact">Contact Us</Link>
-              </li>
+
               <li className=" px-3  cursor-pointer hover:text-black mt-4 ">
                 <Link to="/cart" className="flex flex-wrap">
                   <BsCart4 className="mr-1 mt-[2px] " /> Cart {cartItems.length}{" "}

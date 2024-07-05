@@ -3,8 +3,6 @@ import ReactDom from "react-dom/client";
 import Header from "./src/Components/Header";
 import Body from "./src/Components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./src/Components/About";
-import Contact from "./src/Components/Contact";
 import Error from "./src/Components/Error";
 import RestaurantMenu from "./src/Components/RestaurantMenu";
 import Footer from "./src/Components/Footer";
@@ -34,14 +32,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
       },
       {
         path: "/grocery",
